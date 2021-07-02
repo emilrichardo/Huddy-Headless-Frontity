@@ -1,15 +1,15 @@
 const settings = {
-  "name": "blog",
+  "name": "Udy",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "http://idy.ar",
+      "title": "Francisco Lescano",
+      "description": "Blog"
     }
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "udy-theme",
       "state": {
         "theme": {
           "menu": [
