@@ -96,6 +96,7 @@ const HeaderMain= styled.header `
     &.ishome{
        
         @media (min-width:900px){
+            position:fixed;
             img{
                 
             }

@@ -12,7 +12,7 @@ const Hero = () => {
             <Menu/> 
            <div className="container">
                  
-               <h4 className="fs-16 hero-caption text-italic"> <strong>¡Bienvenidos a mi blog! </strong> <br></br> 
+               <h4 className="fs-16 fs-md-32 hero-caption text-italic"> <strong>¡Bienvenidos a mi blog! </strong> <br></br> 
                Quiero compartirles en este lugar mis poesías, canciones, historias, cartas y muchos textos más.
 
                </h4>
@@ -36,7 +36,7 @@ const HeroHome = styled.section `
     width:100vw;
     height:100vh; 
     overflow:hidden;    
-    top:-95px; 
+    top:0;
    
 
     & .hero-caption, & menu{
@@ -62,11 +62,8 @@ const HeroHome = styled.section `
         height:100vh;  
         position: absolute;
         top:0;
-        right: 0;
-        
-        bottom:0;
-         
-        
+        right: 0;        
+        bottom:0;  
         z-index:0;
         
     }
@@ -74,7 +71,9 @@ const HeroHome = styled.section `
     @media (min-width:800px){
         &:before{
             background-image: ${" url('" + imageLg + "')"};
-            background-position-x:right  ;
+            background-position-x:40vw  ;
+            background-size: auto 160vh; 
+            background-position-y:top;
         }
         
     }

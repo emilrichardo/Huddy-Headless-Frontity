@@ -141,6 +141,7 @@ const Base = ({state}) => {
                 }
                 .fs-32{
                     font-size:30px;
+                    line-height:28px;
                 }
 
                 .fs-34{
@@ -156,6 +157,11 @@ const Base = ({state}) => {
                         font-size:24px;
                         line-height:38px;
                         word-spacing: 4px;
+                    }
+
+                    .fs-md-32{
+                        font-size:32px;
+                        line-height:32px;
                     }
                     .fs-md-48{
                         font-size:48px;
