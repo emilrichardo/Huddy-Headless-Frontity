@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect, styled, css } from 'frontity';
-import Sidebar from './Sidebar';
+import Menu from './Menu';
 import imageSm from '../assets/hero-sm.jpg';
 import imageLg from '../assets/hero.jpg';
 
@@ -9,9 +9,9 @@ import imageLg from '../assets/hero.jpg';
 const Hero = () => {    
     return ( 
         <HeroHome>
-            
+            <Menu/> 
            <div className="container">
-                 <Sidebar/> 
+                 
                <h4 className="fs-16 hero-caption text-italic"> <strong>¡Bienvenidos a mi blog! </strong> <br></br> 
                Quiero compartirles en este lugar mis poesías, canciones, historias, cartas y muchos textos más.
 
@@ -57,6 +57,7 @@ const HeroHome = styled.section `
         background-repeat:no-repeat;         
         background-size: auto 120vh;        
         background-position-x:15vw ;
+        background-position-y:bottom ;
         width:100vw;
         height:100vh;  
         position: absolute;
@@ -73,7 +74,7 @@ const HeroHome = styled.section `
     @media (min-width:800px){
         &:before{
             background-image: ${" url('" + imageLg + "')"};
-            background-position-x:38vw ;
+            background-position-x:right  ;
         }
         
     }

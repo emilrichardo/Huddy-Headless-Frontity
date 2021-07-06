@@ -2,7 +2,7 @@ const settings = {
   "name": "Udy",
   "state": {
     "frontity": {
-      "url": "http://idy.ar",
+      "url": "http://udy.ar",
       "title": "Francisco Lescano",
       "description": "Blog"
     }
@@ -12,28 +12,7 @@ const settings = {
       "name": "udy-theme",
       "state": {
         "theme": {
-          "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "Nature",
-              "/category/nature/"
-            ],
-            [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
-          ],
+       
           "featured": {
             "showOnList": false,
             "showOnPost": false
@@ -45,7 +24,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "http://udy.local"
         }
       }
     },

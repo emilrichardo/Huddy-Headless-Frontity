@@ -1,6 +1,6 @@
 import React from "react";
 import Root from "./Root";
-
+import menuHandler from "./components/handlers/menu-handler";
 
 
 export default {
@@ -9,7 +9,16 @@ export default {
     theme: Root
   },
   state: {
-    theme: {}
+    theme: {
+      autoPrefetch: "in-view",
+      menu: [],
+      menuUrl : "principal",
+      isMobileMenuOpen: false,
+      featured: {
+        showOnList: false,
+        showOnPost: false,
+      },
+    }
   },
   actions: {
     theme: {
@@ -19,6 +28,17 @@ export default {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
-    }
-  }
+      beforeSSR: async ({ state, actions }) => {
+        await actions.source.fetch(`/menu/${state.theme.menuUrl}/`);
+      },
+    },
+  },
+  libraries: { 
+    source: {
+      handlers: [menuHandler],
+    },
+  },
+
+
+
 };

@@ -2,9 +2,8 @@ import React , {children} from 'react';
 import {connect} from 'frontity';
 import Header from './Header';
 import Footer from './Footer';
-import Sidebar from './Sidebar';
+import Menu from './Menu';
 import Base from '../styles/Base';
-import Link from './Link';
 import Hero from './Hero';
 
 
@@ -24,7 +23,7 @@ const Layout = ({state,children}) => {
                 {children} 
             </div> 
 
-            {data.isHome || data.isError ? null : <Sidebar/>  }
+            {data.isHome || data.isError ? null : <Menu/>  }
                
             <Footer/>    
             

@@ -22,7 +22,10 @@
     "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.2",
     "@frontity/wp-source": "^1.11.5",
-    "frontity": "^1.16.0",
+    "bootstrap": "^4.6.0",
+    "frontity": "^1.16.0",    
+    "react-bootstrap": "^1.6.1",
+    "react-transition-group": "^4.4.2",
     "udy-theme": "file:packages/udy-theme"
   }
 }

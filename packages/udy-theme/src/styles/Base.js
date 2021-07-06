@@ -1,9 +1,10 @@
 import React from 'react';
-import { Global, css } from 'frontity';
-const Base = () => {
-
+import { connect, Global, css } from 'frontity';
+const Base = ({state}) => {
+    const { isMobileMenuOpen } = state.theme;
     const light = '#EAE7E4';
     const dark= '#555555';
+    const dark100= '#333333';
     const primary= '#4CB482';
     return ( 
         
@@ -15,6 +16,7 @@ const Base = () => {
                 :root{
                     --primary : ${primary};
                     --dark : ${dark};
+                    --dark100 : ${dark100};
                     --light : ${light};
                     --white: #eeee;
 
@@ -34,12 +36,13 @@ const Base = () => {
                 * {box-sizing: border-box;}
 
                 body{
-                    background-color: var(--light);
-                    color: var(--dark);
+                    background-color: var(--light) ;                   
                     padding:0;
                     margin:0;
                     overflow-x:hidden;
                 }
+
+                
 
                 img{
                                      
@@ -64,17 +67,33 @@ const Base = () => {
                 }
 
 
+                .mb-0{
+                    margin-bottom:0;
+                }
+
+                .mt-0{
+                    margin-top:0;
+                }
+
+
 
 
                 
+                .font-sans{
+                    font-family:var(--sans);
+                } 
 
+                .font-serif{
+                    font-serif:var(--serif);
+                } 
+              
 
                 h1,h2,h3,h4,h5,h6{
                     font-family: var(--serif);
                     font-weight:700;
                     margin-top:0;
                     margin-block-start: 0em;
-                    margin-block-end: 0em;
+                    margin-block-end: 1em;
                   
                 }
 
@@ -144,10 +163,43 @@ const Base = () => {
                 }
 
 
+                .fade-enter{
+                    opacity:0
+                }
+                .fade-enter-active{
+                    opacity: 1;
+                    transition: opacity 300ms ease-out;
+                }
+                .fade-leave{opacity: 1;}
+                .fade-leave-active{
+                    opacity: 0;
+                    transition: opacity 300ms ease-out;
+                }
+
+                .alert-enter {
+                    opacity: 0;
+                    transform: scale(0.9);
+                  }
+                  .alert-enter-active {
+                    opacity: 1;
+                    transform: translateX(0);
+                    transition: opacity 300ms, transform 300ms;
+                  }
+                  .alert-exit {
+                    opacity: 1;
+                  }
+                  .alert-exit-active {
+                    opacity: 0;
+                    transform: scale(0.9);
+                    transition: opacity 300ms, transform 300ms;
+                  }
+                  
+
+
             ` }
 
         />
      );
 }
  
-export default Base;
+export default connect(Base);
