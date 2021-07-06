@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { styled, connect, Global, css } from "frontity";
-import Logo from '../assets/logo.svg';
+
 import Link from './Link';
 import { CloseIcon, HamburgerIcon } from "./menu-icon";
 import Menu from './Menu';
+import { Logo } from './logo';
 
 
 
@@ -13,14 +14,30 @@ const Header = ({state, actions}) => {
     const data = state.source.get(state.router.link);
     const { isMobileMenuOpen } = state.theme;
     const show = isMobileMenuOpen ? 'show' : '';
+
+    const  [scroll, setScroll] = useState(true);
+    const controlNavbar = () =>{
+        if(window.scrollY>200){
+            setScroll(false)
+        } else{
+            setScroll(true)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll',controlNavbar)
+        return () => {
+            winndow.removeEventListener('scroll',controlNavbar)
+        }
+    }, [])
     
 
     return ( 
-        <HeaderMain  className={data.isHome ? "ishome" : null}>
-           <div className="container">               
-               <div className="flex">
-               
-                   <Link link="/"><Brand><img src={Logo} alt="Udy" /></Brand>  </Link> 
+        <HeaderMain  className={data.isHome ? "ishome" : null + scroll ? null : 'scroll'}>
+           
+           <HeaderContainer className="header-container">               
+               <div className="container flex">               
+                   <Link link="/"><Brand> <Logo color="var(--primary)"/> </Brand>  </Link> 
                    <MenuToggle onClick={actions.theme.toggleMobileMenu}>
                         {isMobileMenuOpen ? (
                         <>
@@ -33,13 +50,10 @@ const Header = ({state, actions}) => {
                         <HamburgerIcon color="var(--dark)" size="24px" />
                         )}
                     </MenuToggle>
-                    {/* If the menu is open, render the menu modal */}
-                           
-                    
+                    {/* If the menu is open, render the menu modal */} 
                   
-               </div> 
-                               
-           </div>
+               </div>                               
+           </HeaderContainer>
            {isMobileMenuOpen && <MenuModal className={show}><Menu /></MenuModal>}
            
                      
@@ -93,22 +107,45 @@ const HeaderMain= styled.header `
     z-index:100;
     padding: 25px 0;  
 
-    &.ishome{
-       
+    &.ishome{       
         @media (min-width:900px){
             position:fixed;
-            img{
-                
+            svg{                
             }
         }
     }
+
+    &.scroll{
+        & .header-container{
+            background-color:var(--white);
+            position:fixed;
+            width:100vw;
+            top:0;
+            padding: 15px 0;
+            transition-timing-function:ease-in;
+            transition:0.3s;
+            & svg{
+                max-width:165px;
+            }
+        }
+        
+    }
 `;
+
+
+const HeaderContainer= styled.div `
+   
+  
+`;
+
 
 const Brand= styled.div `
    
     & img{
-        max-width:35vw;
+        max-width:45vw;
         margin: 0 auto;
+        transition-timing-function:ease-in;
+        transition:0.3s;
     }
 `;
 

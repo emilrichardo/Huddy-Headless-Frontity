@@ -12,12 +12,9 @@ const Hero = () => {
             <Menu/> 
            <div className="container">
                  
-               <h4 className="fs-16 fs-md-32 hero-caption text-italic"> <strong>¡Bienvenidos a mi blog! </strong> <br></br> 
-               Quiero compartirles en este lugar mis poesías, canciones, historias, cartas y muchos textos más.
-
-               </h4>
-           </div>
-           
+               <h4 className="fs-16 fs-md-24 font-sans hero-caption mb-0"> <strong>¡Bienvenidos a mi blog! </strong></h4>
+               <p>Quiero compartirles en este lugar mis poesías, canciones, historias, cartas y muchos textos más.</p>
+           </div>          
                 
            
         </HeroHome>
@@ -46,8 +43,7 @@ const HeroHome = styled.section `
     }
 
     & .hero-caption {
-        position: absolute;
-        bottom:10vh;
+       
         max-width:40vw;        
 
     }

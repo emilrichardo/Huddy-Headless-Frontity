@@ -23,9 +23,9 @@ const List = ({state}) => {
 
                 return(
                     <PostList key={id} className={type} >                         
-                        <Link  link={link}> <h2 className="fs-34"  dangerouslySetInnerHTML={{ __html: item.title.rendered }}></h2> </Link>
+                        <Link  link={link}> <h2 className="fs-24"  dangerouslySetInnerHTML={{ __html: item.title.rendered }}></h2> </Link>
                         <h6 className="datepost text-italic fs-18">{item.date}</h6>   
-                        <div dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}></div>                                                    
+                                                                          
                     </PostList>                   
                 )
          })}

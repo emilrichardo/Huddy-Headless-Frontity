@@ -13,6 +13,26 @@ export default {
       autoPrefetch: "in-view",
       menu: [],
       menuUrl : "principal",
+      options: {
+        colors: {
+          primary:"#FA2306",
+          dark: "#555555",
+          dark100: "#333333",
+          light: "#EAE7E4",
+        },       
+        fonts: [
+          {
+            name:"primary",  
+            family:"'Crimson Text', serif", 
+            url:"https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" 
+          },
+          {name:"secondary", 
+            family:"'Lato', sans-serif", 
+            url:"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" 
+          }
+        ]
+      },
+      
       isMobileMenuOpen: false,
       featured: {
         showOnList: false,
