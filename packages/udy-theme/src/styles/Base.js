@@ -7,6 +7,7 @@ const Base = ({state}) => {
 
     const primary= colors.primary;
     const light = '#EAE7E4';
+    const light100 = '#DBDBDB';
     const dark= '#555555';
     const dark100= '#333333';
     return ( 
@@ -24,6 +25,7 @@ const Base = ({state}) => {
                     --dark : ${dark};
                     --dark100 : ${dark100};
                     --light : ${light};
+                    --light100 : ${light100};
                     --white: #eeee;
 
 

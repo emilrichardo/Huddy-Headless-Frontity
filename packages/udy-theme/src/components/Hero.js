@@ -11,9 +11,11 @@ const Hero = () => {
         <HeroHome>
             <Menu/> 
            <div className="container">
-                 
-               <h4 className="fs-16 fs-md-24 font-sans hero-caption mb-0"> <strong>¡Bienvenidos a mi blog! </strong></h4>
+              <div className="hero-caption">
+              <h4 className="fs-16 fs-md-24 font-sans  mb-0"> <strong>¡Bienvenidos a mi blog! </strong></h4>
                <p>Quiero compartirles en este lugar mis poesías, canciones, historias, cartas y muchos textos más.</p>
+              </div>   
+              
            </div>          
                 
            
@@ -43,7 +45,8 @@ const HeroHome = styled.section `
     }
 
     & .hero-caption {
-       
+       position:relative;
+       z-index:1;
         max-width:40vw;        
 
     }

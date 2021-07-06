@@ -1,19 +1,35 @@
 import React from 'react';
 import { connect, decode, styled } from 'frontity';
 import Link from './Link';
+import {CancionIcon,CartaIcon,PoesiaIcon } from '../components/IconSections'
 
 const List = ({state}) => {
     const data = state.source.get(state.router.link);
     const category = decode(state.source[data.taxonomy][data.id].name);
-   
+ 
     
     return ( 
         <ArchiveLayout>
-        
-        <div className="flex">            
-            <h3 className="mb-0">{category}</h3>
+
+           
+            
+           
+            
+            
+            
+
+
+                  
+            <h1 className="mb-0 fs-48 flex">
+            {category}
+                <HeaderArchive>
+                {category === "Canciones" ? <CancionIcon color="var(--primary)"/> : null}
+                {category === "Poesias" ? <PoesiaIcon  color="var(--primary)"/> : null}
+                {category === "Cartas" ? <CartaIcon  color="var(--primary)"/> : null}
+                </HeaderArchive>                
+            </h1> 
             <h6>Publicaciones {data.items.length} </h6> 
-        </div>
+        
         
         
 
@@ -22,9 +38,9 @@ const List = ({state}) => {
             const item = state.source[type][id];
 
                 return(
-                    <PostList key={id} className={type} >                         
-                        <Link  link={link}> <h2 className="fs-24"  dangerouslySetInnerHTML={{ __html: item.title.rendered }}></h2> </Link>
-                        <h6 className="datepost text-italic fs-18">{item.date}</h6>   
+                    <PostList key={id} className={type} > 
+                        <h6 className="datepost text-italic fs-18">{item.date}</h6>                           
+                        <Link  link={link}> <h2 className="fs-24 fs-md-32"  dangerouslySetInnerHTML={{ __html: item.title.rendered }}></h2> </Link>                     
                                                                           
                     </PostList>                   
                 )
@@ -36,7 +52,14 @@ const List = ({state}) => {
 }
  
 export default connect(List);
-
+const HeaderArchive= styled.div `    
+  & svg{
+     
+      width:55px;
+      height:auto;
+      
+  }
+`;
 const ArchiveLayout= styled.section `
     margin-top:55px;
   

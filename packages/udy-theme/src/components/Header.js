@@ -17,7 +17,7 @@ const Header = ({state, actions}) => {
 
     const  [scroll, setScroll] = useState(true);
     const controlNavbar = () =>{
-        if(window.scrollY>200){
+        if(window.scrollY>100){
             setScroll(false)
         } else{
             setScroll(true)
@@ -105,42 +105,52 @@ const MenuToggle = styled.button`
 const HeaderMain= styled.header `   
     position: relative;
     z-index:100;
-    padding: 25px 0;  
+    
 
-    &.ishome{       
+    &:not(.ishome){
+        height:85px;
+    }
+
+    
+
+    & svg{
+        max-width:165px;
         @media (min-width:900px){
-            position:fixed;
-            svg{                
-            }
+            max-width: 35vw;
         }
     }
 
+    & .header-container{
+
+    }
+
     &.scroll{
-        & .header-container{
-            background-color:var(--white);
-            position:fixed;
-            width:100vw;
-            top:0;
-            padding: 15px 0;
+        & .header-container{ 
             transition-timing-function:ease-in;
             transition:0.3s;
+            background-color:var(--white);
             & svg{
                 max-width:165px;
             }
+            
         }
         
     }
 `;
 
 
-const HeaderContainer= styled.div `
-   
+const HeaderContainer= styled.div `   
+    position:fixed;
+    width:100vw;
+    top:0;  
+    padding: 15px 0;
+    transition-timing-function:ease-in;
+    transition:0.3s;
   
 `;
 
 
-const Brand= styled.div `
-   
+const Brand= styled.div `   
     & img{
         max-width:45vw;
         margin: 0 auto;
