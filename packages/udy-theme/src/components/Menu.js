@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './Link';
+import Link from './list/Link';
 import {connect, styled} from "frontity";
 
 const Menu = ({state,libraries}) => {
@@ -23,8 +23,7 @@ const Menu = ({state,libraries}) => {
                     const isCurrentPage = state.router.link === link;      
                     if (!item.child_items) {
                     return (                        
-                        <NavItem key={item.ID}>  
-                                               
+                        <NavItem key={item.ID}> 
                             <Link link={item.url}  aria-current={isCurrentPage ? "page" : undefined} >{item.title}{item.link}</Link>                           
                         </NavItem>
                     );

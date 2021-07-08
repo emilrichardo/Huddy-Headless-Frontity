@@ -1,15 +1,12 @@
 import React from 'react';
 import { connect, Global, css } from 'frontity';
+
 const Base = ({state}) => {
     const { isMobileMenuOpen } = state.theme;
     const {colors} = state.theme.options;
     const {fonts} = state.theme.options;
 
-    const primary= colors.primary;
-    const light = '#EAE7E4';
-    const light100 = '#DBDBDB';
-    const dark= '#555555';
-    const dark100= '#333333';
+   
     return ( 
         
         <Global
@@ -18,20 +15,20 @@ const Base = ({state}) => {
                 url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');               
 
                   
-               
+              
 
                 :root{
-                    --primary : ${primary};
-                    --dark : ${dark};
-                    --dark100 : ${dark100};
-                    --light : ${light};
-                    --light100 : ${light100};
+                    --primary : ${colors.primary};
+                    --primaryrgb : ${colors.primaryrgb};
+                    --dark : ${colors.dark};
+                    --dark100 : ${colors.dark100};
+                    --light : ${colors.light};
+                    --light100 : ${colors.light100};
                     --white: #eeee;
 
 
                     --serif : 'Crimson Text', serif;
                     --sans : 'Lato', sans-serif;
-
                     
                 }
                
@@ -45,7 +42,8 @@ const Base = ({state}) => {
                 * {box-sizing: border-box;}
 
                 body{
-                    background-color: var(--light) ;                   
+                    background-color: var(--light) ;  
+                    color:var(--dark);                 
                     padding:0;
                     margin:0;
                     overflow-x:hidden;
@@ -70,9 +68,31 @@ const Base = ({state}) => {
                     justify-content:space-between; 
                 }
 
-                a{
+                a:not(.btn){
+                    color:var(--dark);
                     text-decoration:none;
-                    color: var(--primary)
+                    &:hover{
+                        color: var(--primary)
+                    }
+                    
+                }
+
+                .btn{
+                    background-color:var(--primary);
+                    color:var(--light);
+                    display:inline-block;
+                    border-radius:5px;
+                    padding:8px 35px;
+                    text-decoration:none;
+                    &:hover{
+                        background-color:rgba(var(--primaryrgb), .9);
+                        color:var(--white)
+                    }
+
+                    &.btn-tag{
+                        padding:2px 5px;
+                    }
+
                 }
 
 
@@ -139,6 +159,12 @@ const Base = ({state}) => {
                     word-spacing: 2px;
                 }
 
+                .fs-20{
+                    font-size:20px;
+                    line-height:28px;
+                    word-spacing: 2px;
+                }
+
                 .fs-24{
                     font-size:24px;
                     line-height:26px;
@@ -150,7 +176,7 @@ const Base = ({state}) => {
                 }
                 .fs-32{
                     font-size:30px;
-                    line-height:28px;
+                    line-height:1em;
                 }
 
                 .fs-34{
@@ -162,6 +188,12 @@ const Base = ({state}) => {
                 }
 
                 @media (min-width:968px){
+
+                    .fs-md-20{
+                        font-size:20px;
+                        line-height:28px;
+                        word-spacing: 2px;
+                    }
                     .fs-md-24{
                         font-size:24px;
                         line-height:38px;

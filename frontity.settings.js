@@ -10,15 +10,7 @@ const settings = {
   "packages": [
     {
       "name": "udy-theme",
-      "state": {
-        "theme": {
-       
-          "featured": {
-            "showOnList": false,
-            "showOnPost": false
-          }
-        }
-      }
+    
     },
     {
       "name": "@frontity/wp-source",

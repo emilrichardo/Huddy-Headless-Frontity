@@ -1,5 +1,8 @@
 import React from "react";
 import Root from "./Root";
+import image from "@frontity/html2react/processors/image";
+import iframe from "@frontity/html2react/processors/iframe";
+import link from "@frontity/html2react/processors/link";
 import menuHandler from "./components/handlers/menu-handler";
 
 
@@ -15,10 +18,12 @@ export default {
       menuUrl : "principal",
       options: {
         colors: {
-          primary:"#FA2306",
+          primary:"#008E82",
+          primaryrgb:"0, 142, 130",
           dark: "#555555",
           dark100: "#333333",
           light: "#EAE7E4",
+          light100: "#DBDBDB",
         },       
         fonts: [
           {
@@ -35,6 +40,16 @@ export default {
       
       isMobileMenuOpen: false,
       featured: {
+        showOnList: false,
+        showOnPost: false,
+      },
+
+      excerpt: {
+        showOnList: false,
+        showOnPost: false,
+      },
+
+      meta: {
         showOnList: false,
         showOnPost: false,
       },
@@ -56,6 +71,14 @@ export default {
   libraries: { 
     source: {
       handlers: [menuHandler],
+    },
+    html2react: {
+      /**
+       * Add a processor to `html2react` so it processes the `<img>` tags
+       * and internal link inside the content HTML.
+       * You can add your own processors too.
+       */
+      processors: [image, iframe, link],
     },
   },
 

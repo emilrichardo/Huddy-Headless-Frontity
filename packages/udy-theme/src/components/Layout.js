@@ -5,20 +5,19 @@ import Footer from './Footer';
 import Menu from './Menu';
 import Base from '../styles/Base';
 import Hero from './Hero';
-import themeOptions from './themeOptions';
-
 
 const Layout = ({state,children}) => {
     const data = state.source.get(state.router.link)   
     return ( 
         <>
-        <themeOptions/>
+       
             <Base/>
             <Header/>
             
             {data.isHome && <Hero/>  }
 
             <Row>
+                
                 <div className="container">                              
                     {children} 
                 </div> 
