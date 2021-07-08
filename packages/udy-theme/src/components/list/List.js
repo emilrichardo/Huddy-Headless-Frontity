@@ -49,7 +49,7 @@ const ListHome = ({state}) => {
 const HeaderArchive= styled.div `    
   & svg{
      
-      width:55px;
+      width:85px;
       height:auto;
       
   }

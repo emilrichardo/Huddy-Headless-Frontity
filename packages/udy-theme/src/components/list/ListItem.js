@@ -13,7 +13,7 @@ const Item = ({ state, item }) => {
   return (
     <Article>
       <Link link={item.link}>
-        <Title className="fs-32" dangerouslySetInnerHTML={{ __html: item.title.rendered }} ></Title>
+        <Title className="fs-18 fs-md-30" dangerouslySetInnerHTML={{ __html: item.title.rendered }} ></Title>
       </Link>
 
       <div>
@@ -35,7 +35,7 @@ const Item = ({ state, item }) => {
       {/* If the post has an excerpt (short summary text), we render it */}
       {item.excerpt && state.theme.excerpt.showOnList ? (
         <Excerpt className="fs-20" dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-      ) : null }
+      ) : <span></span> }
     </Article>
   );
 };
@@ -45,8 +45,9 @@ export default connect(Item);
 
 
 const Article = styled.article`
- margin-top:54px;
- margin-bottom:54px;
+ margin-top:34px;
+ margin-bottom:34px;
+ border-bottom:solid 1px var(--light100)
 `;
 
 const Title = styled.h2`

@@ -69,10 +69,13 @@ const Base = ({state}) => {
                 }
 
                 a:not(.btn){
-                    color:var(--dark);
+                    color: var(--primary);
                     text-decoration:none;
                     &:hover{
                         color: var(--primary)
+                    }
+                    &:visited{
+                        
                     }
                     
                 }
@@ -198,6 +201,11 @@ const Base = ({state}) => {
                         font-size:24px;
                         line-height:38px;
                         word-spacing: 4px;
+                    }
+
+                    .fs-md-30{
+                        font-size:30px;
+                        line-height:38px;
                     }
 
                     .fs-md-32{
