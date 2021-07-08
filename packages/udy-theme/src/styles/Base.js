@@ -36,6 +36,7 @@ const Base = ({state}) => {
                 html{
                     font-family: var(--sans);
                     overflow-x:hidden;
+                    scroll-behavior: smooth;
                    
                 }
 
