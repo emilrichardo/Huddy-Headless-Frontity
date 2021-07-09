@@ -12,7 +12,8 @@ const Base = ({state}) => {
         <Global
             styles = { css`               
                 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap') 
-                url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');               
+                url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');  
+                @import "react-share-button/dist/ShareBtn"   ;          
 
                   
               
@@ -97,6 +98,22 @@ const Base = ({state}) => {
                         padding:2px 5px;
                     }
 
+                }
+
+                .btn-social{
+                    margin: 5px 5px;                   
+                  
+                    & svg{
+                        font-size:24px;                        
+                        color:var(--dark100); 
+                        
+                    }
+                    &:hover{
+                        & svg{                                                    
+                            color:var(--primary); 
+                            
+                        }
+                    }
                 }
 
 

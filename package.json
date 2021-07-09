@@ -19,12 +19,11 @@
   "dependencies": {
     "@frontity/core": "^1.14.2",
     "@frontity/html2react": "^1.7.0",
-    "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.2",
     "@frontity/wp-source": "^1.11.5",
-    "bootstrap": "^4.6.0",
-    "frontity": "^1.16.0",    
-    "react-bootstrap": "^1.6.1",
+    "frontity": "^1.16.0",
+    "react-icons": "^4.2.0",
+    "react-share": "^4.4.0",
     "react-transition-group": "^4.4.2",
     "udy-theme": "file:packages/udy-theme"
   }

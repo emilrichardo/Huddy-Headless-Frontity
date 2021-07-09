@@ -1,9 +1,11 @@
 import { connect, styled } from "frontity";
 import Link from "./Link";
+import FeaturedMedia from "../FeaturedMedia";
 
 
 
-const Item = ({ state, item }) => {  
+const Item = ({ state, item}) => {  
+  const data = state.source.get(state.router.link)  
   const author = state.source.author[item.author];
   const date = new Date(item.date);
 
@@ -13,29 +15,33 @@ const Item = ({ state, item }) => {
   return (
     <Article>
       <Link link={item.link}>
-        <Title className="fs-18 fs-md-30" dangerouslySetInnerHTML={{ __html: item.title.rendered }} ></Title>
+        <Title className="fs-24 fs-md-30" dangerouslySetInnerHTML={{ __html: item.title.rendered }} ></Title>
       </Link>
 
-      <div>
-      {state.theme.meta.showOnList &&
-         ( <Meta>
-            {author && ( <AuthorName> Por <b>{author.name}</b></AuthorName>)}
-            <PublishDate><b>{date.toDateString()}</b></PublishDate>
-          </Meta>
-          )      
-      }
-      </div>
-
-      {/*
-       * If the want to show featured media in the
-       * list of featured posts, we render the media.
-       */}
+     
+      
      
 
-      {/* If the post has an excerpt (short summary text), we render it */}
+      {item.acf.dedicado && <>❤ Dedicado a {item.acf.dedicado}</>}
+      {state.theme.meta.showOnList &&
+         ( <Meta>
+          {item.acf.fecha 
+          ? <>
+            <PublishDate><b>Año: {item.acf.fecha }</b></PublishDate>
+          </> 
+          : <>
+           <PublishDate><small>Publicado: {date.toDateString()}</small></PublishDate> 
+           </>}
+          </Meta>
+          )      
+      }  
+      {state.theme.featured.showOnList && data.isHome && item.sticky ?
+        <FeaturedMedia id={item.featured_media} /> : null
+     }
+       
       {item.excerpt && state.theme.excerpt.showOnList ? (
         <Excerpt className="fs-20" dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-      ) : <span></span> }
+      ) : null }
     </Article>
   );
 };
@@ -47,7 +53,8 @@ export default connect(Item);
 const Article = styled.article`
  margin-top:34px;
  margin-bottom:34px;
- border-bottom:solid 1px var(--light100)
+ border-bottom:solid 1px var(--light100);
+ position:relative;
 `;
 
 const Title = styled.h2`
@@ -55,13 +62,11 @@ margin-bottom:10px;
 `;
 
 
-const Meta = styled.span`
+const Meta = styled.div`
   margin-bottom:24px;
 `;
 
-const AuthorName = styled.span`
- 
-`;
+
 
 
 

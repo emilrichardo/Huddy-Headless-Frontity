@@ -5,18 +5,23 @@ import imageSm from '../assets/hero-sm.jpg';
 import imageLg from '../assets/hero.jpg';
 
 
-
-const Hero = () => {    
+const Hero = ({state}) => {  
+    const data = state.source.get(state.router.link)
+    const post = state.source[data.type][data.id];
+   
     return ( 
         <HeroHome>
             <Menu/> 
            <div className="container">
+           <hr></hr>
               <div className="hero-caption">
+                  
               <h4 className="fs-16 fs-md-24 font-sans  mb-0"> <strong>¡Bienvenidos a mi blog! </strong></h4>
-               <p>Quiero compartirles en este lugar mis poesías, canciones, historias, cartas y muchos textos más.</p>
+               <p className="fs-18 fs-md-20">Quiero compartirles en este lugar mis poesías, canciones, historias, cartas y muchos textos más.</p>
               </div>   
               
-           </div>          
+           </div>  
+                  
                 
            
         </HeroHome>
@@ -27,7 +32,11 @@ const Hero = () => {
 export default connect(Hero);
 
 
+const SharesLinks = styled.div`
+display:flex;
+align-items:center;
 
+`;
 const HeroHome = styled.section `
     position:relative;
     padding-top: 150px;
@@ -47,7 +56,12 @@ const HeroHome = styled.section `
     & .hero-caption {
        position:relative;
        z-index:1;
-        max-width:40vw;        
+       
+        
+        @media (min-width:800px){
+            max-width:40vw;  
+            margin-top:10vh; 
+        }     
 
     }
     &:before{
@@ -70,7 +84,7 @@ const HeroHome = styled.section `
     @media (min-width:800px){
         &:before{
             background-image: ${" url('" + imageLg + "')"};
-            background-position-x:40vw  ;
+            background-position-x:50vw  ;
             background-size: auto 160vh; 
             background-position-y:top;
         }

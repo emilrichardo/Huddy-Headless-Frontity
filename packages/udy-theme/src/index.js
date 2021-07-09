@@ -12,6 +12,7 @@ export default {
     theme: Root
   },
   state: {
+    urlSite: "http://huddy.ar",
     theme: {
       autoPrefetch: "in-view",
       menu: [],
@@ -40,8 +41,8 @@ export default {
       
       isMobileMenuOpen: false,
       featured: {
-        showOnList: false,
-        showOnPost: false,
+        showOnList: true,
+        showOnPost: true,
       },
 
       excerpt: {
@@ -50,7 +51,7 @@ export default {
       },
 
       meta: {
-        showOnList: false,
+        showOnList: true,
         showOnPost: false,
       },
     }

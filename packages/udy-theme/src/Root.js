@@ -16,7 +16,7 @@ const Root = ({state, actions}) => {
         <Layout>            
             {data.isFetching && <Loading/>}
             {data.isError && <ErrorPage/> } 
-            {data.isPostType && <Post/>}             
+            {data.isPostType && <Post/>} 
             {data.isArchive && <List/> }
         </Layout>
      );

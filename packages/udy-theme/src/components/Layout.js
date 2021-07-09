@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Menu from './Menu';
 import Base from '../styles/Base';
 import Hero from './Hero';
+import PageHome from './PageHome';
 
 const Layout = ({state,children}) => {
     const data = state.source.get(state.router.link)   
@@ -20,9 +21,10 @@ const Layout = ({state,children}) => {
                 
                 <div className="container">                              
                     {children} 
+                    
                 </div> 
 
-                {data.isHome || data.isError ? null : <Menu/>  }
+                {data.isHome || data.isError ? <PageHome/> : <Menu/>  }
             </Row>
            
                
