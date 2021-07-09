@@ -53,11 +53,7 @@ const Post = ({state, element,libraries}) => {
 
 export default connect(Post);
 
-const SharesLinks = styled.div`
-display:flex;
-align-items:center;
 
-`;
 
 const MetaPost = styled.div`
 display:flex;
