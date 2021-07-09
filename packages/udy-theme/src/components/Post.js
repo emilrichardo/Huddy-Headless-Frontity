@@ -1,10 +1,9 @@
 import React from 'react';
 import {connect, styled} from "frontity";
 import Link from './list/Link';
-import { RiWhatsappFill , RiFacebookCircleFill} from "react-icons/ri";
-import {FacebookShareButton, WhatsappShareButton} from "react-share";
 
-import FeaturedMedia from './FeaturedMedia';
+
+
 
 const Post = ({state, element,libraries}) => {
     const data = state.source.get(state.router.link)
@@ -41,11 +40,7 @@ const Post = ({state, element,libraries}) => {
                         ? <h4 className="datepost text-italic fs-18 mb-0">Año: {post.acf.fecha} </h4>
                         : <h6 className="datepost text-italic fs-16 mb-0">{post.date}</h6>   
                     } 
-                    <SharesLinks> 
-                        <small></small>
-                        <FacebookShareButton className="btn-social"  url={" " + postUrl} title={'Los invito a leer mi última publicación titulada: ' + post.title.rendered + ''}><RiFacebookCircleFill/></FacebookShareButton>
-                        <WhatsappShareButton className="btn-social"  url={" " + postUrl} title={'Los invito a leer mi última publicación titulada: ' + post.title.rendered + ' '}> <RiWhatsappFill/> </ WhatsappShareButton> 
-                    </SharesLinks>  
+                    
                 </MetaPost>
               
            <ContentPost className="fs-18 fs-md-20"> <Html2React html={post.content.rendered} /> </ContentPost>        
