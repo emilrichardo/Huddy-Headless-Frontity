@@ -47,9 +47,7 @@ const Post = ({state, element,libraries}) => {
                         <WhatsappShareButton className="btn-social"  url={" " + postUrl} title={'Los invito a leer mi última publicación titulada: ' + post.title.rendered + ' '}> <RiWhatsappFill/> </ WhatsappShareButton> 
                     </SharesLinks>  
                 </MetaPost>
-                {state.theme.featured.showOnPost && (
-                    <FeaturedMedia id={post.featured_media} />
-                )}
+              
            <ContentPost className="fs-18 fs-md-20"> <Html2React html={post.content.rendered} /> </ContentPost>        
                    
         </Article>

@@ -1,6 +1,6 @@
 import { connect, styled } from "frontity";
 import Link from "./Link";
-import FeaturedMedia from "../FeaturedMedia";
+
 
 
 
@@ -35,9 +35,7 @@ const Item = ({ state, item}) => {
           </Meta>
           )      
       }  
-      {state.theme.featured.showOnList && data.isHome && item.sticky ?
-        <FeaturedMedia id={item.featured_media} /> : null
-     }
+    
        
       {item.excerpt && state.theme.excerpt.showOnList ? (
         <Excerpt className="fs-20" dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
