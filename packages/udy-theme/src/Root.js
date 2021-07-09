@@ -13,7 +13,8 @@ const Root = ({state, actions}) => {
     const data = state.source.get(state.router.link);
    
     return (                
-        <Layout>            
+        <Layout>     
+                  
             {data.isFetching && <Loading/>}
             {data.isError && <ErrorPage/> } 
             {data.isPostType && <Post/>} 
