@@ -14,7 +14,7 @@ const Root = ({state, actions}) => {
    
     return (                
         <Layout>     
-            <Loading/>       
+                  
             {data.isFetching && <Loading/>}
             {data.isError && <ErrorPage/> } 
             {data.isPostType && <Post/>} 
