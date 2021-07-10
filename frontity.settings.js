@@ -2,7 +2,7 @@ const settings = {
   "name": "Udy",
   "state": {
     "frontity": {
-      "url": "http://www.huddy.ar",
+      "url": "https://huddy.ar",
       "title": "Francisco Lescano",
       "description": "Blog"
     }
