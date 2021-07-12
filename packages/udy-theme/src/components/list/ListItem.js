@@ -4,7 +4,7 @@ import Link from "./Link";
 
 
 
-const Item = ({ state, item}) => {  
+const Item = ({ state, item, featured}) => {  
   const data = state.source.get(state.router.link)  
   const author = state.source.author[item.author];
   const date = new Date(item.date);
@@ -35,7 +35,10 @@ const Item = ({ state, item}) => {
           </Meta>
           )      
       }  
-    
+
+      {state.theme.featured.showOnList && data.isHome && featured === "show" ?
+        <FeaturedMedia id={item.featured_media} /> : null
+     }
        
       {item.excerpt && state.theme.excerpt.showOnList ? (
         <Excerpt className="fs-20" dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
