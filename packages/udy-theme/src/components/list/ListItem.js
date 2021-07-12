@@ -1,6 +1,6 @@
 import { connect, styled } from "frontity";
 import Link from "./Link";
-import FeaturedMedia from "../FeaturedMedia";
+
 
 
 
@@ -35,6 +35,7 @@ const Item = ({ state, item, featured}) => {
           </Meta>
           )      
       }  
+
       {state.theme.featured.showOnList && data.isHome && featured === "show" ?
         <FeaturedMedia id={item.featured_media} /> : null
      }

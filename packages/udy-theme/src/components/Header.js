@@ -142,14 +142,11 @@ const HeaderMain= styled.header `
             max-width:none;
         }
     }
-
     
 
   
 
   
-       
-    }
 `;
 
 

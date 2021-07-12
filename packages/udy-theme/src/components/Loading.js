@@ -4,7 +4,7 @@ const Loading = () => {
     return ( 
         <>
         <Spinner className="lds-dual-ring"></Spinner>
-        <h5>Loading...</h5>
+        <h5>Cargando ...</h5>
         </>
      );
 }
