@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect, Global} from 'frontity';
 import Post from './components/Post';
 import Layout from './components/Layout';
@@ -11,6 +11,11 @@ import List from './components/list/List';
 
 const Root = ({state, actions}) => {
     const data = state.source.get(state.router.link);
+
+    useEffect(() => {
+        actions.source.fetch("category/poesias")
+     }, [])
+     
    
     return (                
         <Layout>            

@@ -4,7 +4,7 @@ import FeaturedMedia from "../FeaturedMedia";
 
 
 
-const Item = ({ state, item}) => {  
+const Item = ({ state, item, featured}) => {  
   const data = state.source.get(state.router.link)  
   const author = state.source.author[item.author];
   const date = new Date(item.date);
@@ -35,7 +35,7 @@ const Item = ({ state, item}) => {
           </Meta>
           )      
       }  
-      {state.theme.featured.showOnList && data.isHome && item.sticky ?
+      {state.theme.featured.showOnList && data.isHome && featured === "show" ?
         <FeaturedMedia id={item.featured_media} /> : null
      }
        

@@ -2,7 +2,7 @@ const settings = {
   "name": "Udy",
   "state": {
     "frontity": {
-      "url": "http://udy.ar",
+      "url": "https://huddy.ar",
       "title": "Francisco Lescano",
       "description": "Blog"
     }
@@ -16,7 +16,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://udy.local"
+          "url": "https://motogar.com.ar/huddyar/"
         }
       }
     },

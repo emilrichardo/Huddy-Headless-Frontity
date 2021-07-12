@@ -16,7 +16,7 @@ const PageHome = ({state}) => {
                     {data.items.map( ({id,type,sticky}) => {            
                         const item = state.source[type][id];             
                             return(                      
-                                <div key={item.id}> {item.sticky && <ListItem key={item.id} item={item}/>} </div>
+                                <div key={item.id} featured="show"> {item.sticky && <ListItem key={item.id} item={item}/>} </div>
                             )
                     })}
             </StickyPost>
