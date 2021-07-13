@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "private": true,
-  "description": "Frontity project",
+  "description": "Huudy",
   "keywords": [
     "frontity"
   ],
@@ -22,8 +22,7 @@
     "@frontity/tiny-router": "^1.4.2",
     "@frontity/wp-source": "^1.11.5",
     "frontity": "^1.16.0",
-    "react-icons": "^4.2.0",
-    "react-share": "^4.4.0",
+    "react-icons": "^4.2.0",  
     "react-transition-group": "^4.4.2",
     "udy-theme": "file:packages/udy-theme"
   }
