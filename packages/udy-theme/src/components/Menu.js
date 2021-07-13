@@ -20,11 +20,11 @@ const Menu = ({state,libraries}) => {
                     {items.map((item) => {                         
                         
                     const link = libraries.source.normalize(item.url);
+                    const is = state.router.link;
                     const isCurrentPage = state.router.link === link;      
                     if (!item.child_items) {
                     return (                        
-                        <NavItem key={item.ID}> 
-                        
+                        <NavItem key={item.ID}>                         
                             <Link link={item.url}  aria-current={isCurrentPage ? "page" : undefined} >{item.title}</Link>                           
                         </NavItem>
                     );
@@ -65,6 +65,7 @@ export default connect(Menu);
 const MainMenu= styled.menu `
     margin-bottom:54px;
     padding:0;
+    transition: all 0.8s ease;
    & li{
        display:block;
        font-family:var(--serif);

@@ -38,7 +38,7 @@ export default {
           }
         ]
       },
-      isDarkmodeOn:true,
+      isDarkmodeOn:false,
       isMobileMenuOpen: false,
       featured: {
         showOnList: true,
