@@ -14,7 +14,7 @@ export default {
   state: {
     urlSite: "http://huddy.ar",
     theme: {
-      autoPrefetch: "in-view",
+      autoPrefetch: "in-view",      
       menu: [],
       menuUrl : "principal",
       options: {
@@ -38,7 +38,7 @@ export default {
           }
         ]
       },
-      
+      isDarkmodeOn:false,
       isMobileMenuOpen: false,
       featured: {
         showOnList: true,
@@ -67,6 +67,11 @@ export default {
       beforeSSR: async ({ state, actions }) => {
         await actions.source.fetch(`/menu/${state.theme.menuUrl}/`);
       },
+
+      toggleDarkmode: ({state})=>{
+        state.theme.isDarkmodeOn = !state.theme.isDarkmodeOn;
+
+      }
     },
   },
   libraries: { 

@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect, Global, css } from 'frontity';
 
-const Base = ({state}) => {
-    const { isMobileMenuOpen } = state.theme;
-    const {colors} = state.theme.options;
-    const {fonts} = state.theme.options;
-
+const Base = ({state}) => { 
+    const {colors,fonts} = state.theme.options;
+    const {isDarkmodeOn , isMobileMenuOpenn} = state.theme;
    
     return ( 
         
@@ -17,18 +15,17 @@ const Base = ({state}) => {
               
 
                 :root{
+                    
                     --primary : ${colors.primary};
                     --primaryrgb : ${colors.primaryrgb};
+                    --black: #222222;
                     --dark : ${colors.dark};
                     --dark100 : ${colors.dark100};
                     --light : ${colors.light};
                     --light100 : ${colors.light100};
                     --white: #eeee;
-
-
                     --serif : 'Crimson Text', serif;
-                    --sans : 'Lato', sans-serif;
-                    
+                    --sans : 'Lato', sans-serif;                    
                 }
                
                 
@@ -42,11 +39,12 @@ const Base = ({state}) => {
                 * {box-sizing: border-box;}
 
                 body{
-                    background-color: var(--light) ;  
-                    color:var(--dark);                 
+                    background-color: ${isDarkmodeOn === true ? "var(--black)" : "var(--light)"};     
+                    color:   ${isDarkmodeOn === true ? "var(--light)" : "var(--dark)"};            
                     padding:0;
                     margin:0;
                     overflow-x:hidden;
+                    transition: all 0.8s ease;
                 }
 
                 
@@ -103,7 +101,7 @@ const Base = ({state}) => {
                   
                     & svg{
                         font-size:24px;                        
-                        color:var(--dark100); 
+                        color: ${isDarkmodeOn === true ? "var(--light100)" : "var(--dark100)"} ; 
                         
                     }
                     &:hover{

@@ -3,7 +3,7 @@ import { styled, connect, Global, css } from "frontity";
 import Link from './list/Link';
 import { CloseIcon, HamburgerIcon } from "./menu-icon";
 import Menu from './Menu';
-
+import { RiSunFill, RiMoonLine} from "react-icons/ri";
 
 
 
@@ -13,7 +13,8 @@ const Header = ({state, actions}) => {
     const data = state.source.get(state.router.link);
     const { isMobileMenuOpen } = state.theme;
     const show = isMobileMenuOpen ? 'show' : '';
-
+    const {isDarkmodeOn} = state.theme;
+    
     const  [scroll, setScroll] = useState(true);
     const controlNavbar = () =>{
         if(window.scrollY>100){
@@ -63,9 +64,10 @@ const Header = ({state, actions}) => {
                   
                </div>                               
            </HeaderContainer>
+           
            {isMobileMenuOpen && <MenuModal className={show}><MenuOverlay onClick={actions.theme.toggleMobileMenu}></MenuOverlay><Menu /></MenuModal>}
            
-                     
+           <DarkModeToggle  onClick={actions.theme.toggleDarkmode}>{isDarkmodeOn === true ? <RiSunFill/> : <RiMoonLine/>}</DarkModeToggle>      
         </HeaderMain>
      );
 }
@@ -191,7 +193,36 @@ const Brand= styled.div `
 
 
 
+const DarkModeToggle = styled.button`
+  position: fixed;
+  top: 22px;
+  right:24px;
+  background: var(--white);
+  transition: all 0.5s ease;
 
+  border: 0;
+  border-radius:50px;
+  z-index: 5;
+  height: 25px;
+  width:25px;
+  display: none;
+  outline: none;
+  display: flex;
+  cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  box-shadow:0 0 3px 3px rgba(0,0,0,.1);
+  @media (max-width: 560px) {
+    right: 82px;
+  }
+
+  &:hover{
+    background: var(--primary);
+    color: var(--light);
+    transform: scale(1.5); 
+
+  }
+`;
 
 
  

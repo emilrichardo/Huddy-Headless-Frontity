@@ -13,7 +13,13 @@ const Root = ({state, actions}) => {
     const data = state.source.get(state.router.link);
 
     useEffect(() => {
-        actions.source.fetch("category/poesias")
+        actions.source.fetch("/category")
+        actions.source.fetch("/category/")
+        actions.source.fetch("/category/poesias")
+        actions.source.fetch("/category/poesias/")
+        actions.source.fetch("/category/poesias/")
+        actions.source.fetch("/category/cartas/")
+        actions.source.fetch("/category/canciones/")
      }, [])
      
    

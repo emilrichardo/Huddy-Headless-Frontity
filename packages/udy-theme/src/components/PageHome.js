@@ -12,11 +12,11 @@ const PageHome = ({state}) => {
     <PageHomeContent>        
         <div className="container">
             <StickyPost>  
-                <h2>Publicación destacada</h2>     
+                <h2 className="fs-28">Publicación destacada</h2>     
                     {data.items.map( ({id,type,sticky}) => {            
                         const item = state.source[type][id];             
                             return(                      
-                                <div key={item.id} featured="show"> {item.sticky && <ListItem key={item.id} item={item}/>} </div>
+                                <div key={item.id}> {item.sticky && <ListItem  featured="show" key={item.id} item={item}/>} </div>
                             )
                     })}
             </StickyPost>

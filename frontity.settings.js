@@ -16,7 +16,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://motogar.com.ar/huddyar"
+          "url": "https://admin.huddy.ar"          
+
         }
       }
     },
