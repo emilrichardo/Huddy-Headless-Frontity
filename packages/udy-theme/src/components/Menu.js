@@ -24,7 +24,8 @@ const Menu = ({state,libraries}) => {
                     if (!item.child_items) {
                     return (                        
                         <NavItem key={item.ID}> 
-                            <Link link={item.url}  aria-current={isCurrentPage ? "page" : undefined} >{item.title}{item.link}</Link>                           
+                        
+                            <Link link={item.url}  aria-current={isCurrentPage ? "page" : undefined} >{item.title}</Link>                           
                         </NavItem>
                     );
                     } else {
@@ -100,7 +101,7 @@ font-style: italic;
  font-weight: 700;
  margin: 24px 0;
  & a{
-    color:var(--dark) ; 
+    color:var(--primary) ; 
     
     &[aria-current="page"] {
      color:var(--white) ; 

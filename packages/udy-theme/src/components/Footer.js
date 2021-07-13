@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect,styled} from 'frontity'
+import Link from './list/Link';
 
 const Footer = () => {
     return ( 
@@ -7,6 +8,7 @@ const Footer = () => {
             <MainFooter>
                 <div className="container text-center">
                     <p className="font-sans">Copy right 2020 - Hudy Lescano</p>
+
                 </div>
             </MainFooter>
         </>

@@ -8,7 +8,7 @@ const Item = ({ state, item, featured}) => {
   const data = state.source.get(state.router.link)  
   const author = state.source.author[item.author];
   const date = new Date(item.date);
-
+  const {isDarkmodeOn} = state.theme;
   
 
 
@@ -19,7 +19,9 @@ const Item = ({ state, item, featured}) => {
       </Link>
 
      
-      
+      {state.theme.featured.showOnList && data.isHome && featured === "show" ?
+        <Link link={item.link}><FeaturedMedia id={item.featured_media} /></Link> : null
+     } 
      
 
       {item.acf.dedicado && <>❤ Dedicado a {item.acf.dedicado}</>}
@@ -35,9 +37,7 @@ const Item = ({ state, item, featured}) => {
           </Meta>
           )      
       }  
-      {state.theme.featured.showOnList && data.isHome && featured === "show" ?
-        <FeaturedMedia id={item.featured_media} /> : null
-     }
+     
        
       {item.excerpt && state.theme.excerpt.showOnList ? (
         <Excerpt className="fs-20" dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
