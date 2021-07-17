@@ -32,11 +32,6 @@ const Hero = ({state}) => {
 export default connect(Hero);
 
 
-const SharesLinks = styled.div`
-display:flex;
-align-items:center;
-
-`;
 const HeroHome = styled.section `
     position:relative;
     padding-top: 150px;

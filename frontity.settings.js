@@ -17,6 +17,7 @@ const settings = {
       "state": {
         "source": {
           "url": "https://admin.huddy.ar"          
+
         }
       }
     },

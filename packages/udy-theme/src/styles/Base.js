@@ -11,9 +11,7 @@ const Base = ({state}) => {
             styles = { css`               
                 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap') 
                 url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');  
-                       
-
-                  
+                 
               
 
                 :root{
