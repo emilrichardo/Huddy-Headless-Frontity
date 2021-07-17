@@ -1,15 +1,14 @@
 import React from 'react';
 import {connect, styled} from "frontity";
 import Link from './list/Link';
-
+import FeaturedMedia from './FeaturedMedia';
 
 
 
 const Post = ({state, element,libraries}) => {
     const data = state.source.get(state.router.link)
     const post = state.source[data.type][data.id];
-    const postUrl = state.urlSite + post.link;
-    const author = state.source.author[post.author];   
+  
     const categories = state.source.category[post.categories];
     const Html2React = libraries.html2react.Component;
    
@@ -33,8 +32,10 @@ const Post = ({state, element,libraries}) => {
             }            
             <h2 className="fs-32 fs-md-48 mt-0" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2>
            
+            {state.theme.featured.showOnPost && <FeaturedMedia id={post.featured_media} /> } 
 
-                 {post.acf.dedicado && <>❤ Dedicado a {post.acf.dedicado}</>}
+
+             {post.acf.dedicado && <>❤ Dedicado a {post.acf.dedicado}</>}
                 <MetaPost>
                     {post.acf.fecha 
                         ? <h4 className="datepost text-italic fs-18 mb-0">Año: {post.acf.fecha} </h4>
