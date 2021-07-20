@@ -16,7 +16,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://admin.huddy.ar"          
+          "url": "http://udy.local"          
 
         }
       }

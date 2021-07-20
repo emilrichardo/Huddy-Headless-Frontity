@@ -19,7 +19,7 @@ export default {
       menuUrl : "principal",
       options: {
         colors: {
-          primary:"#008E82",
+          primary:"#E88873",
           primaryrgb:"0, 142, 130",
           dark: "#555555",
           dark100: "#333333",

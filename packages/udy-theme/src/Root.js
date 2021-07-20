@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {connect, Global} from 'frontity';
+import {connect, Global, css} from 'frontity';
 import Post from './components/Post';
 import Layout from './components/Layout';
 import ErrorPage from './components/Error';
 import Loading from './components/Loading';
 import List from './components/list/List';
+import gutenbergStyle from "./styles/blocks/style.css";
+import gutenbergTheme from "./styles/blocks/theme.css";
 
 
 
@@ -25,6 +27,8 @@ const Root = ({state, actions}) => {
    
     return (                
         <Layout>     
+            <Global styles={css(gutenbergStyle)} />
+             <Global styles={css(gutenbergTheme)} />
                   
             {data.isFetching && <Loading/>}
             {data.isError && <ErrorPage/> } 
